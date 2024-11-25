@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Catalogo
+comment1.params=
+comment1.target=Catalogo()
+comment2.params=
+comment2.target=java.util.List\ getTutores()
+comment3.params=tutor
+comment3.target=void\ agregarTutor(Tutor)
+comment4.params=tutor
+comment4.target=void\ eliminarTutor(Tutor)
+comment5.params=
+comment5.target=java.util.List\ getAsignaturas()
+comment6.params=asignatura
+comment6.target=void\ agregarAsignatura(Asignatura)
+comment7.params=asignatura
+comment7.target=void\ eliminarAsignatura(Asignatura)
+comment8.params=
+comment8.target=void\ mostrarCatalogo()
+comment9.params=args
+comment9.target=void\ main(java.lang.String[])
+numComments=10

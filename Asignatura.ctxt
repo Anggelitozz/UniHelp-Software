@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Asignatura
+comment1.params=nombre\ codigo
+comment1.target=Asignatura(java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getNombre()
+comment3.params=nombre
+comment3.target=void\ setNombre(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ getCodigo()
+comment5.params=codigo
+comment5.target=void\ setCodigo(java.lang.String)
+comment6.params=tutor
+comment6.target=void\ agregarTutor(Tutor)
+comment7.params=
+comment7.target=java.util.List\ getTutores()
+comment8.params=
+comment8.target=void\ mostrarInformacion()
+numComments=9

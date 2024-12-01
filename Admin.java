@@ -5,6 +5,7 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
+
 public class Admin extends Usuario {
     // Constructor
     public Admin(String nombre, String id, String edad, String carrera) {
@@ -53,8 +54,8 @@ public class Admin extends Usuario {
 
         // Crear estudiantes y tutores
         Estudiante estudiante1 = new Estudiante("María García", "E001", "20", "Matemáticas", "maria_foto.jpg");
-        Tutor tutor1 = new Tutor("Carlos Pérez", "T001", "22", "Física", true, "carlos_foto.jpg", 
-                                  new double[] {4.5, 4.7}, new String[] {"Física", "Matemáticas"});
+        Tutor tutor1 = new Tutor("Carlos Pérez", "T001", "22", "Física", true, "carlos_foto.jpg",
+                                  new double[] {4.5, 4.7}, new String[] {"Física", "Matemáticas"},"3131578484");
 
         // Operaciones del administrador
         admin.mostrarInformacion();

@@ -92,9 +92,9 @@ public class UniHelp {
         if (catalogo.obtenerTutores(null, null).isEmpty()) {
             // Crear tutores de prueba solo si el catálogo está vacío
             Tutor tutor1 = new Tutor("Ana Pérez", "T001", "22", "Matemáticas", true, "ana_foto.jpg", 
-                                     new double[]{4.5, 4.8}, new String[]{"Matemáticas", "Física"});
+                                     new double[]{4.5, 4.8}, new String[]{"Matemáticas", "Física"}, "3145658794");
             Tutor tutor2 = new Tutor("Luis Gómez", "T002", "25", "Física", true, "luis_foto.jpg", 
-                                     new double[]{4.0, 3.9}, new String[]{"Física", "Química"});
+                                     new double[]{4.0, 3.9}, new String[]{"Física", "Química"}, "3184462929");
             
             // Agregar tutores al catalogo
             catalogo.agregarTutor(tutor1);
@@ -204,13 +204,15 @@ public class UniHelp {
         JLabel edadLabel = new JLabel("Edad: " + tutor.getEdad());
         JLabel carreraLabel = new JLabel("Carrera: " + tutor.getCarrera());
         JLabel materiasLabel = new JLabel("Materias: " + String.join(", ", tutor.getMaterias()));
-        JLabel calificacionLabel = new JLabel("Calificacion: " + tutor.getCalificaciones());
+        JLabel calificacionLabel = new JLabel("Calificacion: " + tutor.getPromedioCalificaciones());
+        JLabel contactoLabel = new JLabel("Contacto: " + tutor.getContacto());
         
         panel.add(nombreLabel);
         panel.add(edadLabel);
         panel.add(carreraLabel);
         panel.add(materiasLabel);
         panel.add(calificacionLabel);
+        panel.add(contactoLabel);
 
         // Crear botones
         JButton matchButton = new JButton("Match");

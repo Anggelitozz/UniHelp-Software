@@ -14,7 +14,8 @@
     "id": "T001",
     "edad": "22",
     "carrera": "Matemáticas",
-    "cuenta": false
+    "cuenta": false,
+    "contacto": "3145658794"
   },
   {
     "calificaciones": [
@@ -31,7 +32,8 @@
     "id": "T002",
     "edad": "25",
     "carrera": "Física",
-    "cuenta": false
+    "cuenta": false,
+    "contacto": "3184462929"
   },
   {
     "calificaciones": [
@@ -48,7 +50,8 @@
     "id": "T003",
     "edad": "21",
     "carrera": "Física",
-    "cuenta": false
+    "cuenta": false,
+    "contacto": "31879545462"
   },
   {
     "calificaciones": [
@@ -65,6 +68,7 @@
     "id": "T004",
     "edad": "23",
     "carrera": "Ing. Mecanica",
-    "cuenta": false
+    "cuenta": false,
+    "contacto":"31358297641"
   }
 ]

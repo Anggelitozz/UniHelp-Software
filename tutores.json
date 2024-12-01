@@ -1,0 +1,70 @@
+[
+  {
+    "calificaciones": [
+      4.5,
+      4.8
+    ],
+    "materias": [
+      "Matemáticas",
+      "Física"
+    ],
+    "tutor": false,
+    "foto": "ana_foto.jpg",
+    "nombre": "Ana Pérez",
+    "id": "T001",
+    "edad": "22",
+    "carrera": "Matemáticas",
+    "cuenta": false
+  },
+  {
+    "calificaciones": [
+      4.0,
+      3.9
+    ],
+    "materias": [
+      "Física",
+      "Quimica"
+    ],
+    "tutor": false,
+    "foto": "luis_foto.jpg",
+    "nombre": "Luis Gómez",
+    "id": "T002",
+    "edad": "25",
+    "carrera": "Física",
+    "cuenta": false
+  },
+  {
+    "calificaciones": [
+      4.0,
+      3.9
+    ],
+    "materias": [
+      "Matemáticas",
+      "Quimica"
+    ],
+    "tutor": false,
+    "foto": "pepe_foto.jpg",
+    "nombre": "Pepe Matias",
+    "id": "T003",
+    "edad": "21",
+    "carrera": "Física",
+    "cuenta": false
+  },
+  {
+    "calificaciones": [
+      4.0,
+      3.9
+    ],
+    "materias": [
+      "Software",
+      "Quimica"
+    ],
+    "tutor": false,
+    "foto": "tomas_foto.jpg",
+    "nombre": "Tomas Villa",
+    "id": "T004",
+    "edad": "23",
+    "carrera": "Ing. Mecanica",
+    "cuenta": false
+  }
+]

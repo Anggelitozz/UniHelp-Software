@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=ComboBoxAsignaturas
+comment1.params=comboBox
+comment1.target=ComboBoxAsignaturas(javax.swing.JComboBox)
+comment2.params=nombresAsignaturas
+comment2.target=void\ actualizar(java.util.List)
+numComments=3

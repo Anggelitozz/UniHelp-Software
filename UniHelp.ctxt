@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=UniHelp
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment10.params=tutor
+comment10.target=void\ mostrarInformacionTutor(Tutor)
+comment11.params=e
+comment11.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment12.params=e
+comment12.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=e
+comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment4.params=e
+comment4.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment5.params=tutores
+comment5.target=void\ guardarTutoresJSON(java.util.List)
+comment6.params=
+comment6.target=void\ inicializarCatalogo()
+comment7.params=
+comment7.target=void\ abrirVentanaTutores()
+comment8.params=panel\ tutores
+comment8.target=void\ mostrarTutores(javax.swing.JPanel,\ java.util.List)
+comment9.params=e
+comment9.target=void\ actionPerformed(java.awt.event.ActionEvent)
+numComments=13

@@ -98,7 +98,21 @@ public class UniHelp {
         // Acción de leer acerca de la aplicación
         acercaButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(frame, "Bienvenido a UniHelp, una plataforma de tutorías.");
+                String mensaje = """
+                    Acerca de UniHelp:
+                    
+                    UniHelp es una plataforma diseñada para facilitar la conexión entre estudiantes universitarios 
+                    y tutores calificados. Su objetivo es ayudar a los estudiantes a mejorar su rendimiento 
+                    académico mediante tutorías personalizadas.
+                    
+                    Autores:
+                    - Juan David Contreras López
+                    - Ángel Fernando Órtega García
+                    
+                    Fecha de desarrollo:
+                    Noviembre 2024
+                    """;
+                JOptionPane.showMessageDialog(frame, mensaje, "Acerca de UniHelp", JOptionPane.INFORMATION_MESSAGE);
             }
         });
     

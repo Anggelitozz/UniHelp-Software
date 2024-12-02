@@ -174,21 +174,49 @@ public class UniHelp {
         tutoresFrame.setVisible(true);
     }
 
-    private static void mostrarTutores(JPanel panel, List<Tutor> tutores) {
+        private static void mostrarTutores(JPanel panel, List<Tutor> tutores) {
         // Limpiar el panel antes de agregar los nuevos tutores filtrados
         panel.removeAll();
         for (Tutor tutor : tutores) {
-            JButton tutorButton = new JButton(tutor.getNombre());
+                String rutaImagen = tutor.getFoto(); // Se asume que getFoto() devuelve la ruta de la foto
+            ImageIcon iconoTutor = null;
+    
+            try {
+                // Verificar si la ruta de la imagen no es nula o vacía
+                if (rutaImagen != null && !rutaImagen.isEmpty()) {
+                    // Cargar la imagen desde el path
+                    iconoTutor = new ImageIcon(rutaImagen);
+    
+                    // Escalar la imagen al tamaño adecuado (50x50 como ejemplo)
+                    Image imagenEscalada = iconoTutor.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+                    iconoTutor = new ImageIcon(imagenEscalada);
+                }
+            } catch (Exception e) {
+                System.err.println("No se pudo cargar la imagen para " + tutor.getNombre() + ": " + e.getMessage());
+            }
+            // Crear un botón con texto y la imagen
+            JButton tutorButton = new JButton(tutor.getNombre(), iconoTutor);
+            
+            // Alinear la imagen y el texto
+            tutorButton.setHorizontalTextPosition(SwingConstants.RIGHT); // Texto a la derecha
+            tutorButton.setVerticalTextPosition(SwingConstants.CENTER); // Imagen y texto centrados verticalmente
+            
+            // Añadir evento de clic al botón
             tutorButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     mostrarInformacionTutor(tutor);
                 }
             });
+    
+            // Añadir el botón al panel
             panel.add(tutorButton);
         }
+    
+        // Refrescar el panel
         panel.revalidate();
         panel.repaint();
     }
+
 
     private static void mostrarInformacionTutor(Tutor tutor) {
         // Crear una ventana para el perfil del tutor

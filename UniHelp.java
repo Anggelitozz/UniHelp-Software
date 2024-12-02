@@ -44,7 +44,7 @@ public class UniHelp {
         panel.add(encabezadoPanel, BorderLayout.NORTH); // Agregar en la parte superior
         
         // Crear y agregar la imagen (logo) al panel
-        ImageIcon logoIcon = new ImageIcon("logo.png"); // Reemplaza con la ruta de tu imagen
+        ImageIcon logoIcon = new ImageIcon("Resources/logo.png"); // Reemplaza con la ruta de tu imagen
         JLabel logoLabel = new JLabel(logoIcon);
         logoLabel.setHorizontalAlignment(JLabel.CENTER);
         panel.add(logoLabel, BorderLayout.CENTER); // Agrega la imagen en el centro
@@ -131,9 +131,9 @@ public class UniHelp {
         // Si no hay tutores en el catálogo, agrega datos de prueba
         if (catalogo.obtenerTutores(null, null).isEmpty()) {
             // Crear tutores de prueba solo si el catálogo está vacío
-            Tutor tutor1 = new Tutor("Ana Pérez", "T001", "22", "Matemáticas", true, "ana_foto.jpg", 
+            Tutor tutor1 = new Tutor("Ana Pérez", "T001", "22", "Matemáticas", true, "Resources/foto_mujer.png", 
                                      new double[]{4.5, 4.8}, new String[]{"Matemáticas", "Física"}, "3145658794");
-            Tutor tutor2 = new Tutor("Luis Gómez", "T002", "25", "Física", true, "luis_foto.jpg", 
+            Tutor tutor2 = new Tutor("Luis Gómez", "T002", "25", "Física", true, "Resources/foto_hombre.png", 
                                      new double[]{4.0, 3.9}, new String[]{"Física", "Química"}, "3184462929");
             
             // Agregar tutores al catalogo

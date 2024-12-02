@@ -9,7 +9,7 @@
       "Física"
     ],
     "tutor": false,
-    "foto": "foto_mujer.PNG",
+    "foto": "Resources/foto_mujer.PNG",
     "nombre": "Ana Pérez",
     "id": "T001",
     "edad": "22",
@@ -27,7 +27,7 @@
       "Quimica"
     ],
     "tutor": false,
-    "foto": "foto_hombre.PNG",
+    "foto": "Resources/foto_hombre.PNG",
     "nombre": "Luis Gómez",
     "id": "T002",
     "edad": "25",
@@ -45,7 +45,7 @@
       "Quimica"
     ],
     "tutor": false,
-    "foto": "foto_hombre.PNG",
+    "foto": "Resources/foto_hombre.PNG",
     "nombre": "Pepe Matias",
     "id": "T003",
     "edad": "21",
@@ -63,7 +63,7 @@
       "Quimica"
     ],
     "tutor": false,
-    "foto": "foto_hombre.PNG",
+    "foto": "Resources/foto_hombre.PNG",
     "nombre": "Tomas Villa",
     "id": "T004",
     "edad": "23",

@@ -23,45 +23,85 @@ public class UniHelp {
         // Crear y configurar el catálogo
         catalogo = Catalogo.obtenerInstancia();
         inicializarCatalogo(); // Llena el catálogo con datos de prueba
-
+    
         // Crear la ventana principal
         JFrame frame = new JFrame("Pantalla de Inicio");
         frame.setSize(600, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // Crear el panel
+        
+        // Crear el panel principal
         JPanel panel = new JPanel();
-
-        // Crear los botones
+        panel.setLayout(new BorderLayout());
+        panel.setBackground(new Color(50, 50, 50)); // Fondo gris
+    
+        // Crear el panel para el encabezado con "UNIHELP"
+        JPanel encabezadoPanel = new JPanel();
+        encabezadoPanel.setBackground(new Color(50, 50, 50));
+        JLabel encabezadoLabel = new JLabel("UNIHELP");
+        encabezadoLabel.setFont(new Font("Arial", Font.BOLD, 30)); // Fuente y tamaño
+        encabezadoLabel.setForeground(Color.WHITE); // Color blanco para el texto
+        encabezadoPanel.add(encabezadoLabel);
+        panel.add(encabezadoPanel, BorderLayout.NORTH); // Agregar en la parte superior
+        
+        // Crear y agregar la imagen (logo) al panel
+        ImageIcon logoIcon = new ImageIcon("logo.png"); // Reemplaza con la ruta de tu imagen
+        JLabel logoLabel = new JLabel(logoIcon);
+        logoLabel.setHorizontalAlignment(JLabel.CENTER);
+        panel.add(logoLabel, BorderLayout.CENTER); // Agrega la imagen en el centro
+    
+        // Crear un panel para los botones (ahora centrados en una sola columna)
+        JPanel botonesPanel = new JPanel();
+        botonesPanel.setBackground(new Color(50, 50, 50)); // Fondo gris
+        botonesPanel.setLayout(new BoxLayout(botonesPanel, BoxLayout.Y_AXIS)); // Alineación de botones en columna
+    
+        // Crear los botones con tamaño más pequeño
         JButton verTutoresButton = new JButton("Ver la lista de tutores");
         JButton acercaButton = new JButton("Leer acerca de la aplicación");
         JButton salirButton = new JButton("Salir");
-
-        // Agregar los botones al panel
-        panel.add(verTutoresButton);
-        panel.add(acercaButton);
-        panel.add(salirButton);
-
+    
+        // Ajustar tamaños de los botones
+        verTutoresButton.setPreferredSize(new Dimension(200, 40));
+        acercaButton.setPreferredSize(new Dimension(200, 40));
+        salirButton.setPreferredSize(new Dimension(200, 40));
+    
+        // Asegurar que los botones estén centrados
+        verTutoresButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        acercaButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        salirButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+    
+        // Agregar los botones al panel de botones
+        botonesPanel.add(verTutoresButton);
+        botonesPanel.add(acercaButton);
+        botonesPanel.add(salirButton);
+    
+        // Agregar el panel de botones al panel principal
+        panel.add(botonesPanel, BorderLayout.SOUTH);
+    
         // Agregar el panel al frame
         frame.add(panel);
-
+    
         // Hacer visible la ventana
         frame.setVisible(true);
-
+    
+        // Colores de los botones
+        verTutoresButton.setBackground(new Color(255, 209, 0)); // Botón amarillo
+        acercaButton.setBackground(new Color(255, 209, 0)); // Botón amarillo
+        salirButton.setBackground(Color.RED); // Botón rojo
+        
         // Acción de ver tutores (abre la nueva ventana)
         verTutoresButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 abrirVentanaTutores();
             }
         });
-
+    
         // Acción de leer acerca de la aplicación
         acercaButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(frame, "Bienvenido a UniHelp, una plataforma de tutorías.");
             }
         });
-
+    
         // Acción de salir
         salirButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -122,12 +162,14 @@ public class UniHelp {
         tutoresFrame.setSize(600, 400);
         tutoresFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     
-        // Panel principal
+        // Panel principal con un Layout para centrar los elementos
         JPanel panel = new JPanel(new BorderLayout());
+        panel.setBackground(new Color(50, 50, 50)); // Fondo gris
     
-        // Panel de filtros
+        // Panel de filtros (donde estará el combo box)
         JPanel filtrosPanel = new JPanel();
         filtrosPanel.setLayout(new BoxLayout(filtrosPanel, BoxLayout.Y_AXIS));
+        filtrosPanel.setBackground(new Color(50, 50, 50)); // Fondo gris
     
         // Crear el combo box para filtrar por asignatura
         JComboBox<String> asignaturasComboBox = new JComboBox<>();
@@ -143,9 +185,10 @@ public class UniHelp {
         // Inicializar el combo box con las asignaturas actuales
         comboBoxObserver.actualizar(catalogo.obtenerNombresAsignaturas());
     
-        // Panel para mostrar los tutores
+        // Panel para mostrar los tutores (donde estarán los botones de tutores)
         JPanel tutoresPanel = new JPanel();
         tutoresPanel.setLayout(new BoxLayout(tutoresPanel, BoxLayout.Y_AXIS));
+        tutoresPanel.setBackground(new Color(50, 50, 50)); // Fondo gris
     
         // Mostrar todos los tutores inicialmente
         mostrarTutores(tutoresPanel, catalogo.obtenerTutores(null, null));
@@ -222,12 +265,14 @@ public class UniHelp {
         // Crear una ventana para el perfil del tutor
         JFrame perfilFrame = new JFrame("Perfil del Tutor");
         perfilFrame.setSize(400, 300);
-
+        perfilFrame.getContentPane().setBackground(new Color(50, 50, 50)); // Fondo gris oscuro
+    
         // Crear un panel para organizar los componentes
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-
-        // Mostrar información del tutor
+        panel.setBackground(new Color(50, 50, 50)); // Fondo gris oscuro
+    
+        // Establecer el color de las etiquetas a amarillo
         JLabel nombreLabel = new JLabel("Nombre: " + tutor.getNombre());
         JLabel edadLabel = new JLabel("Edad: " + tutor.getEdad());
         JLabel carreraLabel = new JLabel("Carrera: " + tutor.getCarrera());
@@ -235,17 +280,48 @@ public class UniHelp {
         JLabel calificacionLabel = new JLabel("Calificacion: " + tutor.getPromedioCalificaciones());
         JLabel contactoLabel = new JLabel("Contacto: " + tutor.getContacto());
         
+        // Cambiar color de las etiquetas a amarillo
+        nombreLabel.setForeground(Color.YELLOW);
+        edadLabel.setForeground(Color.YELLOW);
+        carreraLabel.setForeground(Color.YELLOW);
+        materiasLabel.setForeground(Color.YELLOW);
+        calificacionLabel.setForeground(Color.YELLOW);
+        contactoLabel.setForeground(Color.YELLOW);
+    
+        // Centrar las etiquetas
+        nombreLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        edadLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        carreraLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        materiasLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        calificacionLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        contactoLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+    
+        // Agregar las etiquetas al panel
         panel.add(nombreLabel);
         panel.add(edadLabel);
         panel.add(carreraLabel);
         panel.add(materiasLabel);
         panel.add(calificacionLabel);
         panel.add(contactoLabel);
-
+    
         // Crear botones
         JButton matchButton = new JButton("Match");
         JButton volverButton = new JButton("Volver");
-
+    
+        // Establecer color para los botones
+        matchButton.setBackground(Color.GREEN); // Botón Match verde
+        matchButton.setForeground(Color.WHITE); // Texto blanco
+        volverButton.setBackground(Color.RED); // Botón Volver rojo
+        volverButton.setForeground(Color.WHITE); // Texto blanco
+    
+        // Aumentar el tamaño de los botones
+        matchButton.setPreferredSize(new Dimension(150, 40));
+        volverButton.setPreferredSize(new Dimension(150, 40));
+    
+        // Centrar los botones
+        matchButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        volverButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+    
         // Agregar acción al botón Match
         matchButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -253,27 +329,28 @@ public class UniHelp {
                 Estudiante estudiante = new Estudiante("Juan Pérez", "E001", "22", "Ingeniería", "juan_foto.jpg");
                 Mensajeria mensajeria = new Mensajeria(tutor, estudiante);
                 mensajeria.notificar_match();
-
+    
                 JOptionPane.showMessageDialog(perfilFrame, "¡Match realizado con éxito!");
             }
         });
-
+    
         // Agregar acción al botón Volver
         volverButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 perfilFrame.dispose(); // Cierra la ventana del perfil
             }
         });
-
-        // Agregar botones al panel
+    
+        // Crear un panel para los botones
         JPanel botonesPanel = new JPanel();
+        botonesPanel.setBackground(new Color(50, 50, 50)); // Fondo gris oscuro
         botonesPanel.add(matchButton);
         botonesPanel.add(volverButton);
-
+    
         // Agregar todo al frame
         perfilFrame.add(panel, BorderLayout.CENTER);
         perfilFrame.add(botonesPanel, BorderLayout.SOUTH);
-
+    
         perfilFrame.setVisible(true);
     }
 }
